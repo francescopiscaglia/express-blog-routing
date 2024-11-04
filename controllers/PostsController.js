@@ -15,13 +15,30 @@ const postsList = (req, res) => {
     res.json(responseData);
 };
 
+
+// index
 const index = (req, res) => {
 
     res.sendFile(path.resolve(__dirname, "../public/html/list.html"));
 };
 
 
+// show
+const show = (req, res) => {
+
+    const post = posts.find(post => post.slug == req.params.slug);
+    console.log(post);
+    
+    res.json({
+        data: post
+    })
+    
+
+};
+
+
 module.exports = {
     postsList,
-    index
-}
+    index,
+    show
+};

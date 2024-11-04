@@ -7,7 +7,11 @@ const PostsController = require("../controllers/PostsController.js");
 // Posts API
 router.get("/list", PostsController.postsList);
 
+// Markup
 router.get("/", PostsController.index);
+
+// Show
+router.get("/:slug", PostsController.show)
 
 
 
