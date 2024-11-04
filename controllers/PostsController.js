@@ -50,8 +50,32 @@ const show = (req, res) => {
 };
 
 
+// Store
+const store = (req, res) => {
+
+    // creo un nuovo oggetto per il nuovo dolce
+    const newPost = {
+        title: req.body.title,
+        slug: req.body.slug,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    };
+
+    // pusho il nuovo oggetto nell'array originale
+    posts.push(newPost);
+
+    // risposta in formato json
+    res.json({
+        status: 201,
+        data: posts,
+        counter: posts.length
+    });
+};
+
 module.exports = {
     postsList,
     index,
-    show
+    show,
+    store
 };

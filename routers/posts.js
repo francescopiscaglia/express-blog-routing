@@ -13,6 +13,9 @@ router.get("/", PostsController.index);
 // Show
 router.get("/:slug", PostsController.show)
 
+// Store
+router.post("/", PostsController.store)
+
 
 
 

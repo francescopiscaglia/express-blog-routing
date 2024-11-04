@@ -4,6 +4,9 @@ const app = express();
 // importazione del router
 const PostsRouter = require("./routers/posts.js");
 
+// middleware per elaborare il corpo della richiesta
+app.use(express.json());
+
 // assets statici
 app.use(express.static("public"));
 
