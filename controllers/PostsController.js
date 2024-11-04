@@ -26,14 +26,19 @@ const index = (req, res) => {
 // show
 const show = (req, res) => {
 
+    // ricerco all'interno dei posts in base allo slug inserito
     const post = posts.find(post => post.slug == req.params.slug);
-    console.log(post);
+
+    if (!post) {
+        return res.status(404).json({
+            error: "404! Not found"
+        });
+    };
     
+    // gestico la risposta in formato json
     res.json({
         data: post
-    })
-    
-
+    });
 };
 
 
