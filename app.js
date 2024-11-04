@@ -23,6 +23,9 @@ Aggiungi il metodo store per la creazione di un nuovo post
 const express = require("express");
 const app = express();
 
+// importazione del router
+const PostsRouter = require("./routers/posts.js");
+
 // start the server
 app.listen(3000, (req, res) => {
     console.log(`Server in running at http://localhost:3000`);  
@@ -32,3 +35,7 @@ app.listen(3000, (req, res) => {
 app.get("/", (req, res) => {
     res.send("<h1>Hi there</h1>")
 });
+
+
+// Router
+app.use("/post", PostsRouter);
