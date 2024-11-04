@@ -27,3 +27,8 @@ const app = express();
 app.listen(3000, (req, res) => {
     console.log(`Server in running at http://localhost:3000`);  
 });
+
+// creat first root
+app.get("/", (req, res) => {
+    res.send("<h1>Hi there</h1>")
+});
