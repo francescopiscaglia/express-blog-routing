@@ -26,6 +26,9 @@ const app = express();
 // importazione del router
 const PostsRouter = require("./routers/posts.js");
 
+// assets statici
+app.use(express.static("public"));
+
 // start the server
 app.listen(3000, (req, res) => {
     console.log(`Server in running at http://localhost:3000`);  
@@ -38,4 +41,4 @@ app.get("/", (req, res) => {
 
 
 // Router
-app.use("/post", PostsRouter);
+app.use("/posts", PostsRouter);

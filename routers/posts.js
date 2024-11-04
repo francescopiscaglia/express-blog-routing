@@ -2,18 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 const posts = require("../db/db.js");
+const PostsController = require("../controllers/PostsController.js");
 
 // Posts API
-router.get("/", (req, res) => {
+router.get("/list", PostsController.postsList);
 
-    const responseData = {
-        data: posts,
-        counter: posts.length
-    };
+router.get("/", PostsController.index);
 
-    res.json(responseData);
-
-});
 
 
 
