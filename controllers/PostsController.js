@@ -4,7 +4,7 @@ const posts = require("../db/db.js");
 // importazione di path
 const path = require("path");
 
-// funzione index per la creazione dell'API
+// funzione per la creazione dell'API
 const postsList = (req, res) => {
 
     const responseData = {
